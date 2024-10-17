@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
+
+* {
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  background-color: #111111;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Effect ตอนโหลดwebsite */
+.Box-Profile {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: bounceIn 2s forwards;
+}
+
+.option {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: bounceIn 2s forwards 0.5s;
+}
+
+@keyframes bounceIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------- Content ------- */
+
+/* Box รูป,ชื่อ,อธิบาย */
+.Box-Profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  animation: neon 2s infinite alternate;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+.circle img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.Box-Profile h1 {
+  font-size: 40px;
+  font-family: "Kanit", sans-serif !important;
+  color: #03a9f4;
+  margin: 1px 1px;
+}
+.Box-Profile p {
+  font-size: 20px;
+  font-family: "Kanit", sans-serif !important;
+  color: white;
+  margin: 1px 1px;
+}
+
+@keyframes neon {
+  0% {
+    box-shadow: 0 0 10px 0px #03a9f4, 0 0 20px 5px #03a9f4,
+      0 0 30px 10px #03a9f4;
+  }
+  100% {
+    box-shadow: 0 0 10px 5px #03a9f4, 0 0 20px 10px #03a9f4,
+      0 0 30px 15px #03a9f4;
+  }
+}
+
+/* ตัวเลือกไป Page อื่น */
+
+.option {
+  padding: 40px;
+  margin: 1px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.Box-link {
+  font-size: 20px;
+  font-family: "Kanit", sans-serif !important;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  padding: 10px 20px;
+  margin: 15px 15px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #262626;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Box-link:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.Box-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #262626;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.Box-link:hover::before {
+  opacity: 1;
+}
+
+/* ------- Effect ------- */
+
+.effectbg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.effectbg li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(127, 127, 127, 0.096);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.effectbg li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.effectbg li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.effectbg li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.effectbg li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.effectbg li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.effectbg li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.effectbg li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.effectbg li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.effectbg li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.effectbg li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+/* ------- Mobile Screen ------- */
+@media (max-width: 575px) {
+  body {
+    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .option {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 730px) {
+  body {
+    min-width: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .option {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
